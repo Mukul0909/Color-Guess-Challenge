@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300&display=swap');
+
+body{
+    background-color: #2827CC;
+    font-family: 'Lexend','sans-serif';
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.display{
+    margin-top: -12px;
+    position: relative;
+    z-index: -1;
+    width: 75%;
+}
+
+.display>h2{
+    margin-top: 5px;
+}
+
+.scoreboard{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.color-options{
+    /* background-color: red; */
+    width: 100 vw;
+    height: 200px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    /* grid-template-rows: repeat(2, 150px); */
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.clr-option{
+    background-color: white;
+    height: 180px;
+    width: 180px;
+    border-radius: 10px;   
+}
+
+.credits{
+    font-size: 15px;
+    text-align: center;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.credits>img{
+    height: 80px;
+    width: 100px;
+}
+
+button{
+    background-color: #f9df30ff;
+    font-weight: bold;
+    border-style: none;
+    width: 5%;
+    align-self: center;
+    margin-top: 50px;
+    padding: 5px 10px;
+}
+
+.thoughts{
+    align-self: center;
+    margin-top: 35px;
+}
+
+@media only screen and (max-width: 500px) {
+    .color-options{
+        /* background-color: red; */
+        width: 100 vw;
+        height: 200px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        /* grid-template-rows: repeat(2, 150px); */
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 30px;
+    }
+    
+    button{
+        background-color: #f9df30ff;
+        font-weight: bold;
+        border-style: none;
+        width: 15%;
+        align-self: center;
+        margin-top: 240px;
+        
+        padding: 5px 10px;
+    }
+    .clr-option{
+        background-color: white;
+        height: 180px;
+        width: 180px;
+        border-radius: 10px;   
+        margin-top: 20px;
+    }
+  }
+
+  .credits{
+    font-size: 15px;
+    text-align: center;
+    justify-content: flex-end;
+    margin-top: 120px;
+}
+/* 
+.hide{
+    display: none;
+} */

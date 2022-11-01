@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color-Guesser-Challenge</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="bg-dark text-white">
+    <!-- title -->
+    <div class="bg-light text-dark mt-4">
+      <h1 class="text-center fs-1 fw-bold py-4">Guess the Colour</h1>
+    </div>
+
+    <!-- Random colour display -->
+    <div class="container bg-info text-center p-2 rounded display">
+      <h2>RGB: (<span id="random-color">0,0,0</span>)</h2>
+    </div>
+
+    <!-- score display -->
+    <div class="scoreboard">
+      <h3>Score: <span id="score">0</span></h3>
+    </div>
+
+    <!-- thought -->
+    <div class="thoughts">
+        <h1 id="thought">Let's See</h1>
+    </div>
+
+    <!-- option color display -->
+    <div class="color-options">
+      <div class="clr-option" id="1"></div>
+      <div class="clr-option" id="2"></div>
+      <div class="clr-option" id="3"></div>
+      <div class="clr-option" id="4"></div>
+    </div>
+
+    <button id="next">NEXT</button>
+
+    <!-- credits -->
+    <h4 class="credits">Developed by: <img src="./Logo/Logo_white.png" /></h4>
+
+    <!-- JS code -->
+    <script>
+        let goodthought = ['Bravo!', 'Awesome!', 'Nailed It!', 'Marvellous', 'Extraordinary!', 'Killing Spree!'];
+        let downthought = ['Boo-Ya!', 'Come On!', 'Better Luck Next Time!', 'Damn You!', 'Think Hard!', 'You Gotta Be Kidding!'];
+
+        let thought = document.getElementById("thought");
+        let btn = document.getElementById("next");
+        let display = document.getElementById("random-color");
+        let boxOne = document.getElementById("1");
+        let boxTwo = document.getElementById("2");
+        let boxThree = document.getElementById("3");
+        let boxFour = document.getElementById("4");
+        let count = document.getElementById('score');
+        let score = 0;
+        let detector = 0;
+        let colour = {};
+       
+        btn.addEventListener("click", () => {
+            detector = 0;
+            for(let i=0;i<4;i++){
+                let arr = [];
+                    for (let j=0; j<3; ++j) {
+                    arr.push(Math.floor(Math.random()*255));
+                    }
+                colour[i] = arr.join(",")
+            }
+
+        display.innerHTML = colour[Math.floor(Math.random()*3)];
+
+        boxOne.setAttribute('style',`background-color: rgb(${colour[0]})`);
+        boxTwo.setAttribute('style',`background-color: rgb(${colour[1]})`);
+        boxThree.setAttribute('style',`background-color: rgb(${colour[2]})`);
+        boxFour.setAttribute('style',`background-color: rgb(${colour[3]})`);        
+        });
+
+        boxOne.addEventListener('click', ()=>{
+            detector = boxOne.id;
+            if(colour[detector-1]==display.innerHTML){
+                score+=1;
+                count.innerHTML = score;
+                let say = goodthought[Math.floor(Math.random()*6)];
+                thought.innerHTML = say;
+
+            }
+
+            else{
+                let say = downthought[Math.floor(Math.random()*6)];
+                thought.innerHTML = say;
+            }
+            // console.log(detector);
+        })
+       
+        boxTwo.addEventListener('click', ()=>{
+            detector = boxTwo.id
+            if(colour[detector-1]==display.innerHTML){
+                score+=1;
+                count.innerHTML = score;
+                let say = goodthought[Math.floor(Math.random()*6)];
+                thought.innerHTML = say;
+            }
+
+            else{
+                let say = downthought[Math.floor(Math.random()*6)];
+                thought.innerHTML = say;
+            }
+            // console.log(detector);
+        })
+
+        boxThree.addEventListener('click', ()=>{
+            detector = boxThree.id
+            if(colour[detector-1]==display.innerHTML){
+                score+=1;
+                count.innerHTML = score;
+                let say = goodthought[Math.floor(Math.random()*6)];
+                thought.innerHTML = say;
+            }
+
+            else{
+                let say = downthought[Math.floor(Math.random()*6)];
+                thought.innerHTML = say;
+            }
+            // console.log(detector);
+        })
+
+        boxFour.addEventListener('click', ()=>{
+            detector = boxFour.id
+            if(colour[detector-1]==display.innerHTML){
+                score+=1;
+                count.innerHTML = score;
+                let say = goodthought[Math.floor(Math.random()*6)];
+                thought.innerHTML = say;
+            }
+
+            else{
+                let say = downthought[Math.floor(Math.random()*6)];
+                thought.innerHTML = say;
+            }
+            // console.log(detector);
+        })
+
+        // console.log(detector)
+        // if(colour[detector-1]==display.innerHTML){
+        //     score+=1;
+        //     count.innerHTML = score;
+        // }
+
+    </script>
+  </body>
+</html>
