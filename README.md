@@ -11,4 +11,5 @@ Glitches to be fixed:
 4. Make sure to change the palette once the answer has been registered (whther right or wrong)
 5. Add more messages.
 6. Edit the styling on the next button for phone only.
-[Live Link](http://letsguesscolor.netlify.app/)
+
+<br>[Live Link](http://letsguesscolor.netlify.app/)
