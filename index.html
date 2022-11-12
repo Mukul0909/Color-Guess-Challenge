@@ -11,44 +11,70 @@
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body class="bg-dark text-white">
+    <!-- Introduction -->
+    <div class="intro">
+      <h1>Welcome to the Color Guess Challenge</h1>
+      <h5>
+        The key to success is simple:<br />
+        The game focuses on your abilities to judge a colour shade based on its
+        RGB values.
+        <br />Your objective is to spot the accurate color from the four options
+        on the screen based on the RGB value shown. <br />You get it right, +1
+        for you, if not -1.
+        <!-- <h3>Think you're good with colours, Bring It On!</h3> -->
+        <br /><br /><strong>Tap on the START button to proceed</strong>
+      </h5>
+      <button class="start">START</button>
+    </div>
+
     <!-- title -->
-    <div class="bg-light text-dark mt-4">
-      <h1 class="text-center fs-1 fw-bold py-4">Guess the Colour</h1>
-    </div>
+    <div class="main-content" id="matter">
+      <div class="bg-light text-dark mt-4 header">
+        <h1 class="text-center fs-1 fw-bold py-4">Guess the Colour</h1>
+        <span class="material-symbols-outlined"> tips_and_updates </span>
+      </div>
 
-    <!-- Random colour display -->
-    <div class="container bg-info text-center p-2 rounded display">
-      <h2>RGB: (<span id="random-color">0,0,0</span>)</h2>
-    </div>
+      <!-- Random colour display -->
+      <div class="container bg-info text-center p-2 rounded display">
+        <h2>RGB: (<span id="random-color">0,0,0</span>)</h2>
+      </div>
 
-    <!-- score display -->
-    <div class="scoreboard">
-      <h3>Score: <span id="score">0</span></h3>
-    </div>
+      <!-- score display -->
+      <div class="scoreboard">
+        <h3>Score: <span id="score">0</span></h3>
+      </div>
 
-    <!-- thought -->
-    <div class="thoughts">
+      <!-- thought -->
+      <div class="thoughts">
         <h1 id="thought">Let's See</h1>
+      </div>
+
+      <!-- option color display -->
+      <div class="color-options">
+        <div class="clr-option" id="1"></div>
+        <div class="clr-option" id="2"></div>
+        <div class="clr-option" id="3"></div>
+        <div class="clr-option" id="4"></div>
+      </div>
+
+      <button id="next">NEXT</button>
+
+      <!-- credits -->
+      <h4 class="credits">Developed by: <img src="./Logo/Logo_white.png" /></h4>
+
+      <!-- JS code -->
+      <script src="./index.js"></script>
     </div>
-
-    <!-- option color display -->
-    <div class="color-options">
-      <div class="clr-option" id="1"></div>
-      <div class="clr-option" id="2"></div>
-      <div class="clr-option" id="3"></div>
-      <div class="clr-option" id="4"></div>
-    </div>
-
-    <button id="next">NEXT</button>
-
-    <!-- credits -->
-    <h4 class="credits">Developed by: <img src="./Logo/Logo_white.png" /></h4>
-
-    <!-- JS code -->
-    <script src = "index.js">
-    </script>
   </body>
 </html>
